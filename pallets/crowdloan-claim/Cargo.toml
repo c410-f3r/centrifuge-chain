@@ -47,7 +47,7 @@ std = [
   'log/std',
   'pallet-balances/std',
   'pallet-vesting/std',
-  'pallet-crowdloan-reward/std',
+  'pallet-crowdloan-claim-reward/std',
   'sp-std/std',
 ]
 
