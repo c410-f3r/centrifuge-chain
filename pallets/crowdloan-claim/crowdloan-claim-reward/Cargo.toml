@@ -12,6 +12,6 @@ targets = ['x86_64-unknown-linux-gnu']
 
 [dependencies]
 codec = { package = "parity-scale-codec", version = "2.0.0", default-features = false }
-frame-support = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
-sp-runtime = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
-sp-std = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
+frame-support = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
+sp-runtime = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
+sp-std = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }

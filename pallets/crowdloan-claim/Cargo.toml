@@ -13,27 +13,27 @@ targets = ['x86_64-unknown-linux-gnu']
 
 [dependencies]
 codec = { package = "parity-scale-codec", version = "2.0.0", default-features = false }
-frame-support = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
-frame-system = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
-frame-benchmarking = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false, optional = true }
+frame-support = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
+frame-system = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
+frame-benchmarking = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false, optional = true }
 log = { version = "0.4.14", default-features = false }
-pallet-balances = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
-sp-core = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
-sp-runtime = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
-sp-std = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
-sc-rpc-api = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
-sp-state-machine = {branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
-sp-trie = {branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
+pallet-balances = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
+sp-core = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
+sp-runtime = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
+sp-std = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
+sc-rpc-api = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
+sp-state-machine = {branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
+sp-trie = {branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
 lazy_static = "1.4.0"
 serde = { version = "1.0.119" }
 pallet-crowdloan-claim-reward = { path='./crowdloan-claim-reward', default_features = false }
 
 
 [dev-dependencies]
-sp-io = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
-sp-trie = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
-sp-keyring = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
-pallet-vesting = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
+sp-io = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
+sp-trie = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
+sp-keyring = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
+pallet-vesting = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
 pallet-crowdloan-reward = { path='../crowdloan-reward', default_features = false }
 hex = { version="0.4.3", default_features = false }
 

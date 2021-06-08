@@ -86,17 +86,12 @@
 // Ensure we're `no_std` when compiling for WebAssembly.
 #![cfg_attr(not(feature = "std"), no_std)]
 
-// ----------------------------------------------------------------------------
-// Imports and dependencies
-// ----------------------------------------------------------------------------
-#[macro_use]
-extern crate lazy_static;
-
 use codec::{Decode, Encode};
 // Runtime, system and frame primitives
 use frame_support::{
     dispatch::{fmt::Debug, Codec, DispatchResult},
     ensure,
+    PalletId,
     sp_runtime::traits::{AtLeast32BitUnsigned, MaybeSerialize},
     traits::{EnsureOrigin, Get},
     weights::Weight,
@@ -108,7 +103,7 @@ use sp_core::Hasher;
 use sp_runtime::{
     sp_std::{vec, vec::Vec},
     traits::{AccountIdConversion, Verify, Zero},
-    ModuleId, MultiSignature,
+    MultiSignature,
 };
 use sp_state_machine::read_child_proof_check;
 use sp_std::convert::TryInto;
@@ -217,7 +212,7 @@ pub mod pallet {
         ///
         /// The module identifier may be of the form ```ModuleId(*b"cc/claim")```.
         #[pallet::constant]
-        type ModuleId: Get<ModuleId>;
+        type ModuleId: Get<PalletId>;
 
         /// Contributor's account identifier on the relay chain.
         type RelayChainAccountId: Debug
@@ -440,7 +435,7 @@ pub mod pallet {
             // TODO [TankOfZion]: `Module` must be replaced by `Pallet` when all code base will be ported to FRAME v2
             <ProcessedClaims<T>>::insert(
                 &relaychain_account_id,
-                <frame_system::Module<T>>::block_number(),
+                <frame_system::Pallet<T>>::block_number(),
             );
 
             Self::deposit_event(Event::RewardClaimed(

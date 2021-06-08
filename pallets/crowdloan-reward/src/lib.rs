@@ -101,7 +101,7 @@ use frame_support::{
 use frame_system::{ensure_root, RawOrigin};
 use sp_runtime::{
     traits::{AccountIdConversion, CheckedDiv, Convert, MaybeSerialize, StaticLookup, Zero},
-    ModuleId, Perbill,
+    Perbill,
 };
 
 // Re-export in crate namespace (for runtime construction)
@@ -162,7 +162,7 @@ type BalanceOf<T> = <<T as pallet_vesting::Config>::Currency as Currency<
 // pallet itself.
 #[frame_support::pallet]
 pub mod pallet {
-    use frame_support::pallet_prelude::*;
+    use frame_support::{PalletId, pallet_prelude::*};
     use frame_system::pallet_prelude::*;
 
     use super::*;
@@ -200,7 +200,7 @@ pub mod pallet {
         ///
         /// ```
         #[pallet::constant]
-        type ModuleId: Get<ModuleId>;
+        type PalletId: Get<PalletId>;
 
         /// Associated type for Event enum
         type Event: From<Event<Self>> + IsType<<Self as frame_system::Config>::Event>;
@@ -507,7 +507,7 @@ impl<T: Config> Pallet<T> {
     /// This actually does computation. If you need to keep using it, then make
     /// sure you cache the value and only call this once.
     pub fn account_id() -> T::AccountId {
-        T::ModuleId::get().into_account()
+        T::PalletId::get().into_account()
     }
 
     // Check if a transaction was called by an administrator or root entity.
@@ -584,7 +584,7 @@ where
         );
 
         ensure!(
-            pallet_vesting::Module::<T>::vesting(&who).is_none(),
+            pallet_vesting::Pallet::<T>::vesting(&who).is_none(),
             pallet_vesting::Error::<T>::ExistingVestingSchedule
         );
 
@@ -614,7 +614,7 @@ where
         // the direct payout back to the module.
         //
         // NOTE: This procedure does change the state...
-        <pallet_vesting::Module<T>>::vested_transfer(
+        <pallet_vesting::Pallet<T>>::vested_transfer(
             T::Origin::from(RawOrigin::Signed(from.clone())),
             to,
             schedule,

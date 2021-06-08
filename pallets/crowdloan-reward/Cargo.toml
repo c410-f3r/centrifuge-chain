@@ -13,23 +13,23 @@ targets = ['x86_64-unknown-linux-gnu']
 
 [dependencies]
 codec = { package = "parity-scale-codec", version = "2.0.0", default-features = false }
-frame-support = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
-frame-system = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
-frame-benchmarking = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false, optional = true }
+frame-support = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
+frame-system = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
+frame-benchmarking = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false, optional = true }
 log = { version = "0.4.14", default-features = false }
-pallet-balances = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
-pallet-indices = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
-pallet-vesting = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
+pallet-balances = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
+pallet-indices = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
+pallet-vesting = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
 serde = { version = "1.0.119" }
-sp-runtime = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
+sp-runtime = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
 pallet-crowdloan-claim-reward = { path='../crowdloan-claim/crowdloan-claim-reward', default_features = false }
 
 
 [dev-dependencies]
-pallet-vesting = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
+pallet-vesting = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
 serde = { version = "1.0.119" }
-sp-core = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
-sp-io = { branch = "rococo-v1", git = "https://github.com/paritytech/substrate.git", default-features = false }
+sp-core = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
+sp-io = { branch = "polkadot-v0.9.3", git = "https://github.com/paritytech/substrate.git", default-features = false }
 
 [features]
 default = ['std']
